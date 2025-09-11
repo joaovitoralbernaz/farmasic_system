@@ -9,7 +9,8 @@
 </head>
 <body>
     <header>
-        <img src="img/logomain4.png" alt="MainLogo" class="MainLogo">
+        <a href="index.html"><img src="img/logomain4.png" alt="MainLogo" class="MainLogo"></a>
+
         <nav>
             <div class="hamburger-menu" id="hamburgerMenu">
                 <span></span>
@@ -20,20 +21,19 @@
                 <a href="index.html">Início</a>
                 <a href="index.html">Cadastros</a>
                 <a href="movimento.html">Movimento</a>
-                <a href="relatorio.html">Relatório</a>
                 <a href="vendas.html">Vendas</a>
             </div>
         </nav>
     </header>
-    
+
     <main>
         <div class="container">
             <div class="main-content">
                 <a href="index.html" class="back-btn">← Voltar</a>
                 <h1 class="page-title">Cadastro de Produtos</h1>
-                
+
                 <div class="form-container">
-                    <form action="#" method="post">
+                    <form id="produto-form">
                         <div class="form-group">
                             <label for="produto-nome">Nome do Produto</label>
                             <input type="text" id="produto-nome" name="produto-nome" placeholder="Digite o nome do produto" required>
@@ -92,10 +92,11 @@
                             <label for="produto-descricao">Descrição</label>
                             <input type="text" name="produto-descricao" id="produto-descricao" placeholder="Descrição do produto">
                         </div>
-                        
+
                         <div class="btn-group">
                             <button type="button" onclick="cadastrarProduto(event)" class="btn btn-primary">Salvar</button>
-                            <button type="reset" class="btn btn-secondary">Limpar</button>
+                            <button type="button" class="btn btn-secondary" onclick="limparProduto()">Limpar</button>
+                            <button type="button" class="btn btn-secondary" onclick="atualizarProduto()">Atualizar</button>
                         </div>
                     </form>
                 </div>
@@ -103,7 +104,7 @@
                 <div class="search-container">
                     <form id="produto-form" action="#" method="get">
                         <input type="text" id="buscar-produto" name="buscar-produto" class="search-input" placeholder="Buscar produto...">
-                        <button type="submit" class="search-btn" onclick="listarProdutos()">Buscar</button>
+                        <button type="button" class="search-btn" onclick="listarProdutos()">Buscar</button>
                     </form>
                 </div>
 
@@ -121,14 +122,14 @@
                             </tr>
                         </thead>
                         <tbody id="tabela-produtos">
-                          
+
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </main>
-    
+
     <footer class="footer_cad">
         <p>&copy; 2025 - Sistema de Estoque de Farmácia</p>
         <address>

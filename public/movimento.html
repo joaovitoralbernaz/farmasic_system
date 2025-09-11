@@ -9,14 +9,14 @@
 </head>
 <body>
     <header>
-        <img src="img/logomain4.png" alt="MainLogo" class="MainLogo">
+        <a href="index.html"><img src="img/logomain4.png" alt="MainLogo" class="MainLogo"></a>
+
         <nav>
             <div class="logo"></div>
             <div class="nav-links">
                 <a href="index.html">Início</a>
                 <a href="index.html">Cadastros</a>
                 <a href="movimento.html">Movimento</a>
-                <a href="relatorio.html">Relatório</a>
                 <a href="vendas.html">Vendas</a>
             </div>
         </nav>
@@ -39,7 +39,6 @@
                             <option value="saida">Saída</option>
                             <option value="ajuste">Ajuste de Inventário</option>
                             <option value="devolucao">Devolução</option>
-                            <option value="perda">Perda/Vencimento</option>
                         </select>
                     </div>
 
@@ -63,6 +62,16 @@
                 <!-- CAMPOS EXCLUSIVOS PARA ENTRADA -->
                 <fieldset id="entrada_campos" class="tipo-campos" style="display:none;">
                     <legend>Dados de Entrada</legend>
+                    <div>
+                        <label for="fornecedor">Motivo da entrada:</label>
+                        <select id="fornecedor" name="fornecedor">
+                            <option value="">Selecione o motivo</option>
+                            <option value="1">Compra</option>
+                            <option value="2">Transferência</option>
+                            <option value="3">Transferência</option>
+                            <option value="4">Doações</option>
+                        </select>
+                    </div>
                     <div>
                         <label for="nota_fiscal">Número da Nota Fiscal:</label>
                         <input type="text" id="nota_fiscal" name="nota_fiscal">
@@ -90,6 +99,12 @@
                             <option value="transferencia">Transferência</option>
                             <option value="descarte">Descarte</option>
                             <option value="amostra">Amostra Grátis</option>
+                            <option value="perda/vencimento">Perda/Vencimento</option>
+                            <option value="uso interno">Uso interno</option>
+                            <option value="acerto de estoque">Acerto de estoque</option>
+                            <option value="doacoes">Doações</option>
+                            <option value="salario">Salário</option>
+                            <option value="despesas">Despesas</option>
                         </select>
                     </div>
                 </fieldset>
@@ -134,20 +149,6 @@
                         <label for="motivo_devolucao">Motivo da Devolução:</label>
                         <input type="text" id="motivo_devolucao" name="motivo_devolucao">
                     </div>
-                </fieldset>
-
-                <!-- CAMPOS EXCLUSIVOS PARA PERDA -->
-                <fieldset id="perda_campos" class="tipo-campos" style="display:none;">
-                    <legend>Perda / Vencimento</legend>
-                    <div>
-                        <label for="motivo_perda">Motivo:</label>
-                        <input type="text" id="motivo_perda" name="motivo_perda">
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Observações</legend>
-                    <textarea id="observacao" name="observacao" rows="3" cols="50"></textarea>
                 </fieldset>
 
                 <!-- ITENS DO MOVIMENTO (igual ao seu código, mantido) -->

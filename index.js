@@ -220,8 +220,11 @@ app.get('/funcionarios', (req, res) => {
 
 // Rota para atualizar um cliente por CPF
 app.put('/clientes/cpf/:cpf', (req, res) => {
+    console.log("asdfasf");
     const { cpf } = req.params;
     const { nome, email, telefone, logradouro, numero, complemento, bairro, cidade, estado, cep } = req.body;
+
+
 
     const query = `UPDATE clientes SET nome = ?, email = ?, telefone = ?, logradouro = ?, numero = ?, complemento = ?, bairro = ?, cidade = ?, estado = ?, cep = ? WHERE cpf = ?`;
 

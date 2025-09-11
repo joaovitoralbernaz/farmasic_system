@@ -9,7 +9,8 @@
 </head>
 <body>
     <header>
-        <img src="img/logomain4.png" alt="MainLogo" class="MainLogo">
+        <a href="index.html"><img src="img/logomain4.png" alt="MainLogo" class="MainLogo"></a>
+
         <nav>
             <div class="hamburger-menu" id="hamburgerMenu">
                 <span></span>
@@ -20,7 +21,7 @@
                 <a href="index.html">Início</a>
                 <a href="index.html">Cadastros</a>
                 <a href="movimento.html">Movimento</a>
-                <a href="relatorio.html">Relatório</a>
+                <a href="vendas.html">Vendas</a>
             </div>
         </nav>
     </header>
@@ -138,7 +139,8 @@
                         </div>
                         <div class="btn-group">
                             <button type="button" onclick="cadastrarFuncionario(event)" class="btn btn-primary">Salvar</button>
-                            <button type="reset" class="btn btn-secondary">Limpar</button>
+                            <button type="button" class="btn btn-secondary" onclick="limpaFuncionario()">Limpar</button>
+                            <button type="button" class="btn btn-secondary" onclick="atualizarFuncionario()">Atualizar</button>
                         </div>
                     </form>
                 </div>

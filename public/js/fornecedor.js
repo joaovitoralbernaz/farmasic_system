@@ -69,7 +69,9 @@ async function listarFornecedores() {
                     <td>${fornecedor.cidade}/${fornecedor.estado}</td>
                     <td>${fornecedor.contatoNome}/${fornecedor.contatoTelefone}</td>
                     <td>
-                        <button class="btn" onclick="editarFornecedor('${fornecedor.cnpj}')" class="btn-editar">EDITAR</button>
+                        <div class="action-btns">
+                            <a href="#" class="edit-btn">Editar</a>
+                        </div>
                     </td>
                 `;
                 tabela.appendChild(linha);
@@ -99,7 +101,6 @@ async function atualizarFornecedor() {
 
     const fornecedorAtualizado = {
         nome,
-        cnpj,
         telefone,
         email,
         cep,

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,7 +11,8 @@
     <div class="nav-overlay" id="navOverlay"></div>
 
     <header>
-        <img src="img/logomain4.png" alt="MainLogo" class="MainLogo">
+        <a href="index.html"><img src="img/logomain4.png" alt="MainLogo" class="MainLogo"></a>
+
         <nav>
             <div class="hamburger-menu" id="hamburgerMenu">
                 <span></span>
@@ -24,7 +23,6 @@
                 <a href="index.html">Início</a>
                 <a href="index.html">Cadastros</a>
                 <a href="movimento.html">Movimento</a>
-                <a href="relatorio.html">Relatório</a>
                 <a href="vendas.html">Vendas</a>
             </div>
         </nav>
@@ -152,18 +150,18 @@
                         </fieldset>
 
                         <div class="btn-group">
-                            <button type="submit" class="btn btn-primary">Salvar</button>
+                            <button type="button" onclick="cadastrarFornecedor(event)" class="btn btn-primary">Salvar</button>
                             <button type="button" class="btn btn-secondary" onclick="limpaFornecedor()">Limpar</button>
+                            <button type="button" class="btn btn-secondary" onclick=" atualizarFornecedor()">Atualizar</button>
                         </div>
                     </form>
                 </div>
 
                 <div class="search-container">
-                    <div>
-                        <input type="text" id="buscar-fornecedor" name="buscar-fornecedor" class="search-input" placeholder="Buscar fornecedor por CNPJ...">
+                    <form>
+                        <input type="text" id="buscar-fornecedor" name="buscar-fornecedor" class="search-input" placeholder="Buscar fornecedor">
                         <button type="button" onclick="listarFornecedores()" class="search-btn">Buscar</button>
-                        <button type="button" onclick="listarFornecedores()" class="search-btn">Listar Todos</button>
-                    </div>
+                    </form>
                 </div>
 
                 <div class="table-container">
@@ -197,11 +195,5 @@
     </footer>
 
     <script src="js/fornecedor.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            listarFornecedores();
-        });
-    </script>
-
 </body>
 </html>

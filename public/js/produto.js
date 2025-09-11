@@ -1,6 +1,6 @@
 async function cadastrarProduto(event) {
     event.preventDefault();
-    
+
     const produto = {
         nome: document.getElementById("produto-nome").value,
         codigo: document.getElementById("produto-codigo").value,
@@ -72,7 +72,6 @@ async function listarProdutos() {
                     <td>
                         <div class="action-btns">
                             <a href="#" class="edit-btn">Editar</a>
-                            <a href="#" class="delete-btn">Excluir</a>
                         </div>
                     </td>
                 `;
@@ -82,4 +81,76 @@ async function listarProdutos() {
     } catch (error) {
         console.error('Erro ao listar produtos:', error);
     }
+}
+
+
+//////////////////////////////////////////////////////////FUNÇÃO ATUALIZAR///////////////////////////////////////////////////////////
+
+async function atualizarProduto() {
+    nome= document.getElementById('produto-nome').value;
+    codigo= document.getElementById('produto-codigo').value;
+    categoria= document.getElementById('produto-categoria').value;
+    estoque= document.getElementById('produto-estoque').value;
+    quantidade_minima= document.getElementById('produto-quantidade-minima').value;
+    preco_anterior= document.getElementById('produto-preco-anterior').value;
+    preco_atual= document.getElementById('produto-preco-atual').value;
+    preco_medio= document.getElementById('produto-preco-medio').value;
+    data_cadastro= document.getElementById('produto-data-cadastro').value;
+    lote= document.getElementById('produto-lote').value;
+    fornecedor= document.getElementById('produto-fornecedor').value;
+    descricao= document.getElementById('produto-descricao').value
+
+    const ProdutoAtualizado = {
+        nome,
+        codigo,
+        categoria,
+        estoque,
+        quantidade_minima,
+        preco_anterior,
+        preco_atual,
+        preco_medio,
+        data_cadastro,
+        lote,
+        fornecedor,
+        descricao
+
+
+    };
+
+    try {
+        const response = await fetch(`/produtos/cpf/${cpf}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(produtoAtualizado)
+        });
+
+        if (response.ok) {
+            alert('Produto atualizado com sucesso!');
+        } else {
+            const errorMessage = await response.text();
+            alert('Erro ao atualizar produto: ' + errorMessage);
+        }
+    } catch (error) {
+        console.error('Erro ao atualizar produto:', error);
+        alert('Erro ao atualizar produto.');
+    }
+}
+
+
+async function limparProduto() {
+    document.getElementById('produto-nome').value = '';
+    document.getElementById('produto-codigo').value = '';
+    document.getElementById('produto-categoria').value = '';
+    document.getElementById('produto-estoque').value = '';
+    document.getElementById('produto-quantidade-minima').value = '';
+    document.getElementById('produto-preco-anterior').value = '';
+    document.getElementById('produto-preco-atual').value = '';
+    document.getElementById('produto-preco-medio').value = '';
+    document.getElementById('produto-data-cadastro').value = '';
+    document.getElementById('produto-lote').value = '';
+    document.getElementById('produto-fornecedor').value = '';
+    document.getElementById('produto-descricao').value = '';
+
 }

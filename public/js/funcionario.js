@@ -70,7 +70,9 @@ async function listarFuncionarios() {
                     <td>${funcionario.func_email}</td>
                     <td>${funcionario.func_cargo}</td>
                     <td>
-                        <button class="btn" onclick="editarFuncionario('${funcionario.func_cpf}')">EDITAR</button>
+                        <div class="action-btns">
+                            <a href="#" class="edit-btn">Editar</a>
+                        </div>
                     </td>
                 `;
                 tabela.appendChild(linha);
